@@ -1,0 +1,14 @@
+{
+	"taxpayerID": "xxx",
+	"taxpayerType": "xxx",
+	"taxpayerNum": "xxx",
+	"taxRegistration": "static/img/example.png",
+	"taxpayerCertificate": "static/img/example.png",
+	"name": "xxx",
+	"bankAccount": "xxx",
+	"bankName": "xxx",
+	"contactNum": "xxx",
+	"bankAddress": "xxx",
+	"bankLicense": "static/img/example.png",
+	"sellerName": "xxx"
+}

@@ -1,0 +1,28 @@
+<div class="modal-title clearfix modal-title-bg">
+	<h5 class="pull-left tips">提示</h5> <i ng-click="cancel()" class="fa fa-close pull-right"></i>
+</div>
+<div class="modal-main">
+	<div class="modal-cancel-tips" style="margin: 15px 0 35px;">
+		<img src="static/img/tips.png" alt="" style="margin-left: 130px;margin-right:10px;vertical-align: middle;">
+		<span style="vertical-align: middle;color: #666;">订单取消申请</span>
+	</div>
+	<div class="modal-cancel-reason">
+		<div class="clearfix">
+			<span class="star pull-left" style="color: #ff6600;line-height: 32px;">*</span>
+			<span class="pull-left" style="font-size: 14px;color: #666;margin-right: 15px;line-height: 32px;">取消原因</span>
+			<div class="cancel-select pull-left" ng-click="showList($event)">
+				<input type="text" placeholder="请选择取消订单的理由" readonly="">
+				<ol>
+					<li ng-repeat="items in cancelType" ng-click="choseList($index+1,items,$event)">
+						<a href="javascript:;">{{ items }}</a>
+					</li>
+				</ol>
+			</div>
+		</div>
+		<p style="font-size: 12px;color: #ff6600;margin-left: 85px;margin-top: 30px;margin-bottom: 40px;">您确定要取消该订单吗？取消订单后，不能恢复。</p>
+	</div>
+	<div class="modal-control">
+		<a class="modal-button ok" href="javascript:;">确定</a>
+		<a class="modal-button cancel" ng-click="cancel()" href="javascript:;">取消</a>
+	</div>
+</div>

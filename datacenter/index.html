@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>浙江大数据交易中心</title>
+	<link rel="stylesheet" href="static/css/bootstrap.min.css">
+	<link rel="stylesheet" href="static/css/font-awesome.min.css">
+	<link rel="stylesheet" href="static/css/main.css">
+	<link rel="stylesheet" href="static/css/pagination.css">
+	<script type="text/javascript" src='static/js/angular.min.js'></script>
+	<script type="text/javascript" src='static/js/jquery.js'></script>
+	<script type="text/javascript" src='static/js/angular-route.min.js'></script>
+	<script type="text/javascript" src='static/js/app.js'></script>
+	<script type="text/javascript" src='static/js/controller.js'></script>
+	<script type="text/javascript" src='static/js/common.js'></script>
+	<script type="text/javascript" src='static/js/tm.pagination.js'></script>
+	<script type="text/javascript" src='static/js/modal.js'></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row mainArea">
+			<div id="sidebar" class="col-md-2 col-lg-2 col-xs-2">
+				<ul>
+					<li class="sidebar-title">
+						<span>我是买家</span>
+						<ul>
+							<li class="second-title">
+								<span>订单中心</span>
+								<ul>
+									<li>
+										<a class="active" href="#myorder">我的订单</a>
+									</li>
+								</ul>
+							</li>
+							<li class="second-title">
+								<span>关注中心</span>
+								<ul>
+									<li>
+										<a href="http://www.baidu.com">我的购物车</a>
+									</li>
+									<li>
+										<a href="#mycustom">我的定制</a>
+									</li>
+								</ul>
+							</li>
+							<li class="second-title">
+								<span>账户管理</span>
+								<ul>
+									<li>
+										<a href="#personalInfo">个人信息</a>
+									</li>
+									<li>
+										<a href="#reciveAddress">收货地址</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="sidebar-title">
+						<span>我是卖家</span>
+						<ul>
+							<li class="second-title">
+								<span>订单管理</span>
+								<ul>
+									<li>
+										<a href="#sellorder">订单跟踪</a>
+									</li>
+								</ul>
+							</li>
+							<li class="second-title">
+								<span>数据管理</span>
+								<ul>
+									<li>
+										<a href="javascript:">发布数据</a>
+									</li>
+									<li>
+										<a href="javascript:">出售中数据</a>
+									</li>
+									<li>
+										<a href="javascript:">待出售数据</a>
+									</li>
+								</ul>
+							</li>
+							<li class="second-title">
+								<span>结账管理</span>
+								<ul>
+									<li>
+										<a href="#account">对账单</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="content col-md-10 col-lg-10 col-xs-10" ng-view></div>
+		</div>
+	</div>
+</body>
+</html>

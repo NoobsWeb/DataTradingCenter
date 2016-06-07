@@ -1,0 +1,99 @@
+<div class="page-content">
+  <ul class="clearfix tab">
+    <li class="pull-left active">
+      <a href="javascript:">全部订单</a>
+    </li>
+    <li class="pull-left">
+      <a href="javascript:">待付款</a>
+    </li>
+    <li class="pull-left">
+      <a href="javascript:">待收货</a>
+    </li>
+    <li class="pull-left">
+      <a href="javascript:">已完成</a>
+    </li>
+    <li class="pull-left">
+      <a href="javascript:">已取消</a>
+    </li>
+  </ul>
+  <div class="list-title">
+    <ul class="clearfix">
+      <li class="special selecthover">
+        <div class="select" ng-mouseenter="showList($event)" ng-mouseleave="hideList()">
+          <input placeholder="{{ TimeFlag[1] }}" />
+          <ol>
+            <li ng-repeat="items in TimeFlag"><a ng-click="selectTimeFlag($index+1,items,$event)" href="javascript:;">{{ items }}</a></li>
+          </ol>
+        </div>
+      </li>
+      <li class="special">
+        <span>商品信息</span>
+      </li>
+      <li>
+        <span>数量</span>
+      </li>
+      <li>
+        <span>数据类型</span>
+      </li>
+      <li>
+        <span>收货人</span>
+      </li>
+      <li style="width: 15%">
+        <span>金额</span>
+      </li>
+      <li>
+        <span>订单状态</span>
+      </li>
+      <li class="special">
+        <span>操作</span>
+      </li>
+    </ul>
+  </div>
+  <div class="table-info" ng-repeat="items in orderData">
+    <div class="panel-title clearfix">
+      <span class="time pull-left">{{ items.createtime }}</span>
+      <span class="order-num pull-left">订单号：<strong>{{ items.orderId}}</strong></span>
+      <span class="seller pull-left">
+        <img src="static/img/company.png" alt="" style="">
+        {{ items.buyer }}
+      </span>
+    </div>
+    <div class="panel-content clearfix" ng-repeat="commoditys in items.commodity">
+      <div class="contents pull-left">
+        <div class="middle-div commodity">
+          <img ng-src="{{ commoditys.img }}" alt="">
+          <div class="commodityInfo">
+            <div class="commodity-name">{{ commoditys.commodityName }}</div>
+            <div class="commodity-extra" ng-repeat="extras in commoditys.commodityExtra">{{ extras }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="contents pull-left">
+        <span class="middle-div">{{  commoditys.commodityCount }}</span>
+      </div>
+      <div class="contents pull-left">
+        <span class="middle-div">{{ DataType[commoditys.commodityType] }}</span>
+      </div>
+      <div class="contents pull-left">
+        <span class="middle-div"><i class="icon-user"></i>{{commoditys.seller}}</span>
+      </div>
+      <div class="contents pull-left special">
+        <div class="middle-div">
+          <div class="total">金额：{{ commoditys.commodityAmount }}</div>
+          <div ng-if="commoditys.commodityAmountType !=='' " class="line"></div>
+          <div ng-if="commoditys.commodityAmountType !=='' " class="paytype">{{ PayType[commoditys.commodityAmountType] }}</div>
+        </div>
+      </div>
+      <div class="contents pull-left">
+        <span class="middle-div">{{ OrderType[commoditys.orderType] }}</span>
+      </div>
+      <div class="contents pull-left special" >
+        <span class="middle-div">
+          <a href="javascript:;" ng-if="commoditys.orderType == 1">修改价格</a>
+          <a href="http:{{detailHref}}?{{ commoditys.orderType }}&{{ items.orderId }}" target="_blank">查看详情</a>
+        </span>
+      </div>
+    </div>
+  </div>
+  <tm-pagination conf="paginationConf"></tm-pagination>
+</div>

@@ -1,0 +1,232 @@
+<div class="page-content">
+  <ul class="clearfix tab">
+    <li class="pull-left active">
+      <a ng-click="tab('basic',$event)" href="javascript:">基本信息</a>
+    </li>
+    <li class="pull-left">
+      <a ng-click="tab('company',$event)" href="javascript:">企业信息</a>
+    </li>
+    <li class="pull-left">
+      <a ng-click="tab('buyer',$event)" href="javascript:">买家信息</a>
+    </li>
+  </ul>
+  <div class="basic" ng-if="type == 'basic'">
+    <div class="panel-info">
+      <div class="panel-title">账号信息</div>
+      <div class="panel-content">
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >用户名：</span>
+          <span class="pull-left span-content" >{{info.userName}}</span>
+        </div>
+        <div class="panel-content-info clearfix" >
+          <span class="pull-left span-title">密码：</span>
+          <span class="pull-left span-content">互联网环境下，建议您定期修改密码</span>
+          <a class="pull-left span-margin" href="javascript:" ng-click="modifyPwd()" >修改</a>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title">APIKEY：</span>
+          <span class="pull-left span-content">{{info.APIKEY}}</span>
+          <span ng-if="info.isAPIKEY == 0" class="pull-left span-margin" style="margin-right: 5px">您还没有apikey？</span>
+          <a ng-if="info.isAPIKEY == 0" class="pull-left"  href="javascript:" ng-click="apply()" >立即申请</a>
+        </div>
+         <div class="panel-content-info clearfix">
+          <span class="pull-left span-special">该APPKEY用于调用和监控平台内所有API类型的数据使用，与账号唯一绑定</span>
+        </div>
+      </div>
+    </div>
+    <div class="panel-info">
+      <div class="panel-title">联系信息</div>
+      <div class="panel-content">
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title">姓名：</span>
+          <span class="pull-left span-content">{{info.name}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title">固定电话：</span>
+          <span class="pull-left span-content">{{info.telephone}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title">手机号码：</span>
+          <span class="pull-left span-content">{{info.mobile}}</span>
+          <span ng-if="info.isMobile == 1" class="pull-left  span-margin authen"><i class="fa fa-check"></i>已认证</span>
+          <span ng-if="info.isMobile == 0" class="pull-left span-margin noauthen"><i class="fa fa-close"></i>未认证</span>
+          <a ng-if="info.isMobile == 0" class="pull-left"  href="#" >立即认证</a>
+        </div>
+         <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >电子邮箱：</span>
+          <span class="pull-left span-content">{{info.email}}</span>
+          <span ng-if="info.isEmail == 1" class="pull-left span-margin authen"><i class="fa fa-check"></i>已认证</span>
+          <span ng-if="info.isEmail == 0" class="pull-left span-margin noauthen"><i class="fa fa-close"></i>未认证</span>
+          <a ng-if="info.isEmail == 0" class="pull-left"  href="#" >立即认证</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="company" ng-if="type == 'company'">
+    <div class="panel-info">
+      <div class="panel-title">企业执照信息（副本）</div>
+      <div class="panel-content">
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >企业名称 ：</span>
+          <span class="pull-left span-content" >{{info.name}}</span>
+        </div>
+        <div class="panel-content-info clearfix" >
+          <span class="pull-left span-title">营业执照注册号：</span>
+          <span class="pull-left span-content">{{info.registID}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >法定代表人姓名：</span>
+          <span class="pull-left span-content">{{info.legal}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >身份证号：</span>
+          <span class="pull-left span-content">{{info.legalID}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >法人身份证电子版：</span>
+          <span class="pull-left span-content">
+            <div class="img-warpper">
+              <img ng-src="{{info.legalIMG}}" alt="">
+            </div>
+            <a ng-click="viewPic(info.legalIMG)" href="javascript:"><i class="fa fa-search-plus"></i>查看大图</a>
+          </span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >营业执照所在地：</span>
+          <span class="pull-left span-content">{{info.location}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >营业执照详细地址：</span>
+          <span class="pull-left span-content">{{info.address}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >成立日期：</span>
+          <span class="pull-left span-content">{{info.foundDate}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >营业期限：</span>
+          <span class="pull-left span-content">{{info.operatingPeriod.startTime}}至{{info.operatingPeriod.endTime}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >注册资本：</span>
+          <span class="pull-left span-content">{{info.registeredCapital}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >经营范围：</span>
+          <span class="pull-left span-content">{{info.businessScope}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >营业执照副本电子版：</span>
+          <span class="pull-left span-content">
+            <div class="img-warpper">
+              <img ng-src="{{info.license}}" alt="">
+            </div>
+            <a ng-click="viewPic(info.license)" href="javascript:"><i class="fa fa-search-plus"></i>查看大图</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="panel-info">
+      <div class="panel-title">组织机构代码证</div>
+      <div class="panel-content">
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >组织机构代码：</span>
+          <span class="pull-left span-content">{{info.orgID}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title">组织机构代码证有效期：</span>
+          <span class="pull-left span-content">{{info.orgOperatingPeriod.startTime}}至{{info.orgOperatingPeriod.endTime}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >组织机构代码证电子版：</span>
+          <span class="pull-left span-content">
+            <div class="img-warpper">
+              <img ng-src="{{info.orgLicense}}" alt="">
+            </div>
+            <a ng-click="viewPic(info.orgLicense)" href="javascript:"><i class="fa fa-search-plus"></i>查看大图</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="buyer" ng-if="type == 'buyer'">
+    <div class="panel-info">
+      <div class="panel-title">税务登记证</div>
+      <div class="panel-content">
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >纳税人识别号：</span>
+          <span class="pull-left span-content" >{{info.taxpayerID}}</span>
+        </div>
+        <div class="panel-content-info clearfix" >
+          <span class="pull-left span-title">纳税人类型：</span>
+          <span class="pull-left span-content">{{info.taxpayerType}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >纳税人类型税码：</span>
+          <span class="pull-left span-content">{{info.taxpayerNum}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >纳税登记证电子版：</span>
+          <span class="pull-left span-content">
+            <div class="img-warpper">
+              <img ng-src="{{info.taxRegistration}}" alt="">
+            </div>
+            <a ng-click="viewPic(info.taxRegistration)" href="javascript:"><i class="fa fa-search-plus"></i>查看大图</a>
+          </span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >一般纳税人资格证电子版：</span>
+          <span class="pull-left span-content">
+            <div class="img-warpper" >
+              <img ng-src="{{info.taxpayerCertificate}}" alt="">
+            </div>
+            <a ng-click="viewPic(info.taxpayerCertificate)" href="javascript:"><i class="fa fa-search-plus"></i>查看大图</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="panel-info">
+      <div class="panel-title">开户银行许可证</div>
+      <div class="panel-content">
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >银行开户名：</span>
+          <span class="pull-left span-content">{{info.name}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title">公司银行账户：</span>
+          <span class="pull-left span-content">{{info.bankAccount}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title">开户银行支行名称：</span>
+          <span class="pull-left span-content">{{info.bankName}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title">开户银行支行联行号：</span>
+          <span class="pull-left span-content">{{info.contactNum}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title">开户银行支行所在地：</span>
+          <span class="pull-left span-content">{{info.bankAddress}}</span>
+        </div>
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >银行开户许可证电子版：</span>
+          <span class="pull-left span-content">
+            <div class="img-warpper">
+              <img ng-src="{{info.bankLicense}}" alt="">
+            </div>
+            <a ng-click="viewPic(info.bankLicense)" href="javascript:"><i class="fa fa-search-plus"></i>查看大图</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="panel-info">
+      <div class="panel-title">卖家名称</div>
+      <div class="panel-content">
+        <div class="panel-content-info clearfix">
+          <span class="pull-left span-title" >期望的卖家名称：</span>
+          <span class="pull-left span-content">{{info.sellerName}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

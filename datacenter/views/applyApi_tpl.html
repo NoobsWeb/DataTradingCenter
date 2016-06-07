@@ -1,0 +1,30 @@
+<div class="modal-title clearfix"> <i ng-click="cancel()" class="fa fa-close pull-right"></i>
+</div>
+<div class="modal-main" ng-if="nextStep == 1">
+	<div class="modal-cancel-tips clearfix" style="margin: 15px 0 30px 0px;">
+		<p style="color: #999;width: 460px;line-height: 24px;">APIKEY用于调用平台内所有API类型的数据，并监控使用情况，与账号唯一绑定。申请APIKEY需先验证手机号码。</p>
+	</div>
+	<div class="modal-cancel-reason">
+		<p style="margin-bottom: 25px;color: #666;">验证已绑定手机号：</p>
+		<p style="font-size: 14px;color: #666;">1800****12</p>
+		<div class="clearfix" style="margin-top: 20px">
+			<input type="text" disabled="" class="pull-left" style="font-size: 14px;color: #999;margin-right: 15px;height: 30px;">
+			<button class="pull-left" style="width: 120px;height: 30px;border: 1px solid #e2e2e2;background: #fafafa">获取短信验证码</button>
+		</div>
+	</div>
+	<div class="modal-control" style="margin-top: 20px;">
+		<a class="modal-button ok" href="javascript:;" ng-click="next2()">确定</a>
+	</div>
+</div>
+<div class="modal-main" ng-if="nextStep == 2">
+	<div class="modal-cancel-tips clearfix" style="margin: 15px 0 30px 0px;">
+		<p style="color: #666;font-size: 14px;">您的APIKEY为：</p>
+	</div>
+	<div class="modal-cancel-reason">
+		<p style="margin-bottom: 25px;color: #ff3333;font-size: 14px;">asdas112123aasdas</p>
+		<p style="font-size: 12px;color: #666;">该APIKEY用于调用和监控平台内所有API类型的数据使用情况，与账号唯一绑定。</p>
+	</div>
+	<div class="modal-control" style="margin-top: 20px;">
+		<a class="modal-button ok" href="javascript:;" >确定</a>
+	</div>
+</div>

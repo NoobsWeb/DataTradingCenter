@@ -1,0 +1,64 @@
+<div class="modal-title clearfix modal-title-bg"> <i ng-click="cancel()" class="fa fa-close pull-right"></i>
+</div>
+<div class="modal-main">
+	<div class="modal-content-info clearfix">
+		<span class="pull-left span-title">
+			<span class="star pull-left" style="color: #ff6600;line-height: 32px;">*</span>
+			收货人：
+		</span>
+		<input type="text" class="pull-left input"></div>
+	<div class="modal-content-info clearfix" >
+		<span class="pull-left span-title">
+			<span class="star pull-left" style="color: #ff6600;line-height: 32px;">*</span>
+			所在省市：
+		</span>
+		<div ng-click="showList($event)" class="address-select pull-left first" >
+			<input type="text" placeholder="请选择" readonly="">
+			<ol>
+				<li ng-repeat="items in province">
+					<a ng-click="selectAddress($index+1,items.name ,$event)" href="javascript:;">{{items.name}}</a>
+				</li>
+			</ol>
+		</div>
+		<div ng-click="showList($event)" class="address-select pull-left" >
+			<input type="text" placeholder="请选择" readonly="">
+			<ol>
+				<li ng-repeat="items in city">
+					<a ng-click="selectAddress($index+1,items.name ,$event)" href="javascript:;">{{items.name}}</a>
+				</li>
+			</ol>
+		</div>
+		<div ng-click="showList($event)" class="address-select pull-left" >
+			<input type="text" placeholder="请选择" readonly="">
+			<ol>
+				<li ng-repeat="items in qu">
+					<a ng-click="selectAddress($index+1,items.name ,$event)" href="javascript:;">{{items.name}}</a>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div class="modal-content-info clearfix" >
+		<span class="pull-left span-title">
+			<span class="star pull-left" style="color: #ff6600;line-height: 32px;">*</span>
+			街道地址：
+		</span>
+		<input type="text" class="pull-left input" ></div>
+	<div class="modal-content-info clearfix" >
+		<span class="pull-left span-title">
+			<span class="star pull-left" style="color: #ff6600;line-height: 32px;">*</span>
+			手机号码：
+		</span>
+		<input type="text" class="pull-left input" ></div>
+	<div class="modal-content-info clearfix" >
+		<span class="pull-left span-title">邮箱：</span>
+		<input type="text" class="pull-left input" ></div>
+	<div class="modal-content-info clearfix" >
+		<span class="pull-left set-default" ng-click="defautAddress($event)" ng-class="{true: 'active'}[isDefault]"> <i class="fa fa-check"></i>
+		</span>
+		<span class="pull-left" style="margin-left: 10px;">设为默认</span>
+	</div>
+	<div class="modal-content-info clearfix" >
+		<button class="" style="margin-left: 110px;width: 85px;height: 33px;color:#fff;background: #0099cc;border:none;border-radius: 3px;">保存</button>
+		<button class="" style="margin-left: 10px;width: 85px;height: 33px;color:#0099cc;background: #fff;border:none;border-radius: 3px;border: 1px solid #0099cc;">取消</button>
+	</div>
+</div>

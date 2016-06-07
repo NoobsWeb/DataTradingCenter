@@ -1,0 +1,117 @@
+<div class="modal-title clearfix"> <i ng-click="cancel()" class="fa fa-close pull-right"></i>
+</div>
+<div class="modal-main" ng-if="nextStep == 1">
+	<div class="modal-cancel-tips clearfix" style="margin: 15px 0 35px 45px;">
+		<div class="pull-left" style="width: 148px;">
+			<div style="height: 6px;width: 121px;background: #ccc;position: relative;top:16px;left: 27px"></div>
+			<div style="width: 28px;height: 28px;border-radius: 50%;background: #ccc;position: relative;">
+				<div style="width: 11px;height: 11px;border-radius: 50%;background: #99cc33;" class="middle-div"></div>
+			</div>
+			<div style="position: relative;top:5px;left: -9px; color: #99cc33;">验证身份</div>
+		</div>
+		<div class="pull-left" style="width: 148px;">
+			<div style="height: 6px;width: 121px;background: #ccc;position: relative;top:16px;left: 27px"></div>
+			<div style="width: 28px;height: 28px;border-radius: 50%;background: #ccc;position: relative;">
+				<div style="width: 11px;height: 11px;border-radius: 50%;background: #fff;" class="middle-div"></div>
+			</div>
+			<div style="position: relative;top:5px;left: -9px;">修改密码</div>
+		</div>
+		<div class="pull-left" style="width: 148px;margin-top: 6px;">
+			<div style="width: 28px;height: 28px;border-radius: 50%;background: #ccc;position: relative;">
+				<div style="width: 11px;height: 11px;border-radius: 50%;background: #fff;" class="middle-div"></div>
+			</div>
+			<div style="position: relative;top:5px;left: 5px;">完成</div>
+		</div>
+	</div>
+	<div class="modal-cancel-reason">
+		<div class="clearfix">
+			<span class="pull-left" style="font-size: 14px;color: #999;margin-right: 15px;line-height: 32px;">已验证手机：</span>
+			<span class="pull-left" style="font-size: 14px;color: #999;margin-right: 15px;line-height: 32px;">18***00000</span>
+		</div>
+		<div class="clearfix" style="margin-top: 20px">
+			<span class="pull-left" style="font-size: 14px;color: #999;margin-right: 15px;line-height: 32px;">短信验证码：</span>
+			<input type="text" disabled="" class="pull-left" style="font-size: 14px;color: #999;margin-right: 15px;height: 30px;">
+			<button class="pull-left" style="width: 120px;height: 30px;border: 1px solid #ccc;background: #fafafa">获取短信验证码</button>
+		</div>
+	</div>
+	<div class="modal-control" style="margin-top: 20px;margin-left: 99px;">
+		<a class="modal-button ok" href="javascript:;" ng-click="next2()">提交</a>
+	</div>
+</div>
+<div class="modal-main" ng-if="nextStep == 2">
+	<div class="modal-cancel-tips clearfix" style="margin: 15px 0 35px 45px;">
+		<div class="pull-left" style="width: 148px;">
+			<div style="height: 6px;width: 121px;background: #ccc;position: relative;top:16px;left: 27px"></div>
+			<div style="width: 28px;height: 28px;border-radius: 50%;background: #99cc33;position: relative;">
+				<i class="fa fa-check middle-div" style="width: auto;color: #fff;font-size: 12px"></i>
+			</div>
+			<div style="position: relative;top:5px;left: -9px;color: #99cc33;">验证身份</div>
+		</div>
+		<div class="pull-left" style="width: 148px;">
+			<div style="height: 6px;width: 121px;background: #ccc;position: relative;top:16px;left: 27px"></div>
+			<div style="width: 28px;height: 28px;border-radius: 50%;background: #ccc;position: relative;">
+				<div style="width: 9px;height: 9px;border-radius: 50%;background: #99cc33;" class="middle-div"></div>
+			</div>
+			<div style="position: relative;top:5px;left: -9px;color: #99cc33">修改密码</div>
+		</div>
+		<div class="pull-left" style="width: 148px;margin-top: 6px;">
+			<div style="width: 28px;height: 28px;border-radius: 50%;background: #ccc;position: relative;">
+				<div style="width: 9px;height: 9px;border-radius: 50%;background: #fff;" class="middle-div"></div>
+			</div>
+			<div style="position: relative;top:5px;left: 5px;">完成</div>
+		</div>
+	</div>
+	<div class="modal-cancel-reason">
+		<div class="clearfix">
+			<span class="pull-left" style="width:70px;text-align:right;font-size: 12px;color: #999;margin-right: 15px;line-height: 32px;">原始密码：</span>
+			<input type="password" class="pull-left" style="width:200px;font-size: 12px;color: #999;margin-right: 15px;height: 30px;">
+			<span class="pull-left" style="font-size: 12px;color: #999;margin-right: 15px;line-height: 32px;">请验证原密码</span>
+		</div>
+		<div class="clearfix" style="margin-top: 20px">
+			<span class="pull-left" style="width:70px;text-align:right;font-size: 12px;color: #999;margin-right: 15px;line-height: 32px;">新密码：</span>
+			<input type="password" class="pull-left" style="width:200px;font-size: 12px;color: #999;margin-right: 15px;height: 30px;">
+			<span class="pull-left" style="width:220px;font-size: 12px;color: #999;margin-right: 15px;">6-20字符，建议密码为字母，数字和符号的至少两种的组合</span>
+		</div>
+		<div class="clearfix" style="margin-top: 20px">
+			<span class="pull-left" style="width:70px;text-align:right;font-size: 12px;color: #999;margin-right: 15px;line-height: 32px;">重复密码：</span>
+			<input type="password" class="pull-left" style="width:200px;font-size: 12px;color: #999;margin-right: 15px;height: 30px;">
+			<span class="pull-left" style="font-size: 12px;color: #999;margin-right: 15px;line-height: 32px;">请重复密码</span>
+		</div>
+	</div>
+	<div class="modal-control" style="margin-top: 20px;margin-left: 85px;">
+		<a class="modal-button ok" href="javascript:;" ng-click="next3()">确认修改</a>
+	</div>
+</div>
+<div class="modal-main" ng-if="nextStep == 3">
+	<div class="modal-cancel-tips clearfix" style="margin: 15px 0 35px 45px;">
+		<div class="pull-left" style="width: 148px;">
+			<div style="height: 6px;width: 121px;background: #ccc;position: relative;top:16px;left: 27px"></div>
+			<div style="width: 28px;height: 28px;border-radius: 50%;background: #99cc33;position: relative;">
+				<i class="fa fa-check middle-div" style="width: auto;color: #fff;font-size: 12px"></i>
+			</div>
+			<div style="position: relative;top:5px;left: -9px;color: #99cc33;">验证身份</div>
+		</div>
+		<div class="pull-left" style="width: 148px;">
+			<div style="height: 6px;width: 121px;background: #ccc;position: relative;top:16px;left: 27px"></div>
+			<div style="width: 28px;height: 28px;border-radius: 50%;background: #99cc33;position: relative;">
+				<i class="fa fa-check middle-div" style="width: auto;color: #fff;font-size: 12px"></i>
+			</div>
+			<div style="position: relative;top:5px;left: -9px;color: #99cc33">修改密码</div>
+		</div>
+		<div class="pull-left" style="width: 148px;margin-top: 6px;">
+			<div style="width: 28px;height: 28px;border-radius: 50%;background: #99cc33;position: relative;">
+				<i class="fa fa-check middle-div" style="width: auto;color: #fff;font-size: 12px"></i>
+			</div>
+			<div style="position: relative;top:5px;left: 5px;color: #99cc33;">完成</div>
+		</div>
+	</div>
+	<div style="margin-left: 45px;font-size: 14px;color: #999;">
+		<span style="display:inline-block;position: relative;border-radius: 50%;background: #fff;width: 45px;height: 45px;border: 1px solid #ccc;vertical-align: middle;margin-right: 10px;">
+			<i class="fa fa-check middle-div" style="font-size: 38px;color: #99cc33;width: auto;"></i>
+		</span>
+		恭喜，密码修改成功，请牢记 !
+	</div>
+	<div class="modal-control" style="margin-top: 30px;margin-left: 85px;">
+		<a class="modal-button ok" href="javascript:;">确定</a>
+	</div>
+</div>

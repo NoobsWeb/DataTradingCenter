@@ -1,0 +1,72 @@
+<div class="page-content">
+  <div class="panel-info">
+    <div class="panel-title">
+      <div class="panel-content-info clearfix">
+        <span class="pull-left span-title">订单时间：</span>
+        <div ng-click="showList($event)" class="account-select pull-left">
+          <input type="text" placeholder="2016年" readonly="">
+          <ol>
+            <li ng-repeat="items in TimeFlag"><a ng-click="choseList($index+1,items,$event)" href="javascript:;">{{ items }}</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <ul class="clearfix tab" style="margin-top: 20px;">
+      <li class="pull-left active">
+        <a href="javascript:">已结算订单</a>
+      </li>
+      <li class="pull-left">
+        <a href="javascript:">未结算订单</a>
+      </li>
+    </ul>
+    <div class="panel-info">
+      <div class="panel-content">
+        <div class="panel-content-info account clearfix" >
+          <ul class="clearfix title">
+            <li>
+              <span>收货人</span>
+            </li>
+            <li>
+              <span>所在省市</span>
+            </li>
+            <li class="special">
+              <span>街道地址</span>
+            </li>
+            <li>
+              <span>手机</span>
+            </li>
+            <li>
+              <span>地址</span>
+            </li>
+            <li>
+              <span>操作</span>
+            </li>
+          </ul>
+        </div>
+        <div class="panel-content-info account clearfix" >
+          <div class="contents address pull-left">
+            <span class="middle-div">李先生</span>
+          </div>
+          <div class="contents address pull-left">
+            <span class="middle-div">北京市朝阳区</span>
+          </div>
+          <div class="contents address pull-left special">
+            <span class="middle-div">北辰世纪中心A座5层</span>
+          </div>
+          <div class="contents  address pull-left">
+            <span class="middle-div">1350000</span>
+          </div>
+          <div class="contents address pull-left">
+            <span class="middle-div">默认地址</span>
+          </div>
+          <div class="contents address pull-left" >
+            <span class="middle-div">
+              <a href="javascript:;" ng-click="modify()">修改</a>
+              <a href="javascript:;">删除</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

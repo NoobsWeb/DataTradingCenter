@@ -1,0 +1,77 @@
+<div class="page-content">
+  <ul class="clearfix tab">
+    <li class="pull-left active">
+      <a href="javascript:">全部订单</a>
+    </li>
+    <li class="pull-left">
+      <a href="javascript:">待处理</a>
+    </li>
+    <li class="pull-left">
+      <a href="javascript:">已完成</a>
+    </li>
+    <li class="pull-left">
+      <a href="javascript:">需求驳回</a>
+    </li>
+  </ul>
+  <div class="list-title custom">
+    <ul class="clearfix">
+      <li class="special1">
+        <span>商品信息</span>
+      </li>
+      <li>
+        <span>处理状态</span>
+      </li>
+      <li class="special2">
+        <span>处理结果</span>
+      </li>
+      <li >
+        <span>金额</span>
+      </li>
+      <li>
+        <span>操作</span>
+      </li>
+    </ul>
+  </div>
+  <div class="table-info" ng-repeat="items in orderData">
+    <div class="panel-title clearfix">
+      <span class="seller pull-left">
+        <img src="static/img/company.png" alt="" style="">
+        {{ items.seller }}
+      </span>
+    </div>
+    <div class="panel-content custom clearfix" ng-repeat="commoditys in items.commodity">
+      <div class="contents pull-left">
+        <div class="middle-div commodity">
+          <img ng-src="{{ commoditys.img }}" alt="">
+          <div class="commodityInfo">
+            <div class="commodity-name">{{ commoditys.commodityName }}</div>
+            <div class="commodity-extra" ng-repeat="extras in commoditys.commodityExtra">{{ extras }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="contents pull-left">
+        <span class="middle-div">{{  OrderType[commoditys.orderType] }}</span>
+      </div>
+      <div class="contents pull-left special">
+        <span ng-if="commoditys.orderType == 7" class="middle-div">{{ commoditys.orderTypeDesc }}</span>
+        <div class="middle-div" ng-if="commoditys.orderType == 8">
+          <div style="margin-bottom: 10px;">提取数据量：{{ commoditys.dataCount }}条</div>
+          <div>匹配率：{{ commoditys.matchRate }}</div>
+        </div>
+      </div>
+      <div class="contents pull-left">
+        <div class="middle-div">
+          <div class="total">金额：{{ commoditys.commodityAmount }}</div>
+        </div>
+      </div>
+      <div class="contents pull-left" >
+        <span class="middle-div">
+          <a class="" href="javascript:;">需求详情</a>
+          <a class="" href="javascript:;" ng-if="commoditys.orderType == 7">修改需求</a>
+          <a class="" href="javascript:;" ng-if="commoditys.orderType == 8">立即购买</a>
+        </span>
+      </div>
+    </div>
+  </div>
+  <tm-pagination conf="paginationConf"></tm-pagination>
+</div>

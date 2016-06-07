@@ -1,0 +1,24 @@
+{
+	"nature": "xx",
+	"name": "xxx",
+	"registID": "xxx",
+	"legal": "xxx",
+	"legalID": "xxx",
+	"legalIMG": "static/img/example.png",
+	"location": "xx",
+	"address": "xx",
+	"foundDate": "xx",
+	"operatingPeriod": {
+		"startTime": "xxxx",
+		"endTime": "xxx"
+	},
+	"registeredCapital": "xxx",
+	"businessScope": "xxxx",
+	"license": "static/img/example.png",
+	"orgID": "xxx",
+	"orgOperatingPeriod": {
+		"startTime": "xxxx",
+		"endTime": "xxx"
+	},
+	"orgLicense": "static/img/example.png"
+}

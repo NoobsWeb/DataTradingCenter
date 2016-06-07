@@ -1,0 +1,16 @@
+[{
+	"createtime": "2015-01-01 10:00:00", //时间
+	"orderId": "123456", //订单号
+	"seller": "百分点大数据", //卖家
+	"commodity": [{
+		"img": "static/img/info_pic.png", //商品图片url
+		"commodityName": "云数据库是一种稳定可靠、可弹性伸缩的在线数据库服务。", //商品信息
+		"commodityType": "1", //数据类型
+		"commodityExtra": ["2013年度"], //额外的商品信息
+		"commodityCount": "1", //数量
+		"commodityAmount": "9000.00", //总金额 
+		"commodityAmountType": "支付宝", //付款方式
+		"buyer": "李先生", //买家
+		"orderType": "1" //状态
+	}]
+}]
